@@ -11,7 +11,7 @@ const arabicFont = Cairo({
 
 export const metadata: Metadata = {
   title: "ملعب النور | مدينة نصر",
-  description: "ملعبك المفضل في قلب مدينة نصر. نجيل طبيعي وإضاءة احترافية عشان تلعب كورتك بمزاج.",
+  description: "جاهز للماتش؟ شوف المواعيد المتاحة واختار الوقت اللي يناسبك.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
