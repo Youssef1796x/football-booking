@@ -13,7 +13,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#0A0A0A]">
+    <section
+  id="home"
+  className="relative min-h-screen w-full overflow-hidden bg-[#0A0A0A]"
+>
       {/* Background image with parallax */}
       <div
         className="absolute inset-0 z-0"
@@ -37,12 +40,10 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 flex min-h-screen flex-col justify-center px-6 py-20 sm:px-10 md:px-16 lg:px-24">
-        {/* Pitch-line divider — green accent */}
-        <div className="mb-8 h-[3px] w-14 bg-[#2ECC71] sm:w-20" />
-
+        
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
-          <span className="text-base font-medium text-[#8E8E93] sm:text-lg">
+          <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
             مدينة نصر
           </span>
           <div className="h-px w-10 bg-[#8E8E93]/40" />
@@ -50,29 +51,29 @@ export default function Hero() {
 
         {/* Venue name — monumental */}
         <h1
-          className="text-5xl font-black leading-[1.1] text-white sm:text-7xl md:text-8xl lg:text-[8rem]"
+          className="text-2xl font-black leading-[2] text-white sm:text-2xl md:text-2xl lg:text-[8rem]"
           style={{ letterSpacing: "-0.02em" }}
         >
-          ملعب النور
+          احجز ماتش النهارده ⚽
         </h1>
 
         {/* Description */}
         <p
-          className="mt-7 max-w-md text-lg text-[#8E8E93] sm:text-xl"
+          className="mt-7 max-w-md text-lg text-[#A1A1AA] sm:text-xl"
           style={{ lineHeight: "1.6" }}
         >
-          ملعبك المفضل في قلب مدينة نصر. نجيل طبيعي وإضاءة احترافية عشان تلعب
-          كورتك بمزاج.
+          جاهز للماتش ؟ شوف المواعيد المتاحة واختار الوقت اللي يناسبك.
+
         </p>
 
         {/* CTA — stadium light glow on hover */}
         <a
           href="#"
-          className="group mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
+          className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale- hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
         >
           شوف المواعيد
           <svg
-            className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1"
+            className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
             fill="none"
             stroke="currentColor"
             strokeWidth={2.5}
@@ -81,7 +82,7 @@ export default function Hero() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M19 12H5m0 0l7 7m-7-7l7-7"
+              d="M19 13H5m0 0l7 7m-7-7l7-7"
             />
           </svg>
         </a>

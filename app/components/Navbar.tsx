@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 const links = [
-  { label: "الرئيسية", href: "#" },
-  { label: "عن الملعب", href: "#" },
-  { label: "المواعيد", href: "#" },
-  { label: "المكان", href: "#" },
-  { label: "تواصل", href: "#" },
+  { label: "الرئيسية", href: "#home" },
+  { label: "عن الملعب", href: "#about" },
+  { label: "الحجز", href: "#booking" },
+  { label: "المكان", href: "#location" },
+  { label: "تواصل معانا", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full bg-gradient-to-b from-[#0A0A0A]/90 to-transparent backdrop-blur-[2px]">
       <div className="flex items-center justify-between px-6 py-4 sm:px-10 md:px-16 lg:px-24">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5">
+        <a href="#home" className="flex items-center gap-2.5">
           <span className="h-2.5 w-2.5 rounded-full bg-[#2ECC71]" />
           <span className="text-xl font-black text-white sm:text-2xl">
             ملعب النور
@@ -36,7 +36,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#"
+            href="#booking"
             className="rounded-full bg-[#2ECC71] px-6 py-2.5 text-sm font-bold text-[#0A0A0A] transition-all duration-300 hover:shadow-[0_0_16px_rgba(46,204,113,0.4)]"
           >
             شوف المواعيد
@@ -87,7 +87,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#"
+            href="#booking"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-[#2ECC71] px-6 py-3 text-center text-base font-bold text-[#0A0A0A]"
           >
