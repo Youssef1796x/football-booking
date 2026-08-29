@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_right_center,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.8)_100%)]" />
 
       {/* Content */}
-      <div className="relative z-20 flex h-full flex-col justify-top px-6 py-32 sm:px-10 md:px-16 lg:px-24">
+      <div className="relative z-20 flex h-full flex-col justify-start px-6 py-32 sm:px-10 md:px-16 lg:px-24">
         
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
