@@ -81,7 +81,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-4 py-3 text-base font-medium text-[#8E8E93] transition-colors duration-200 hover:bg-white/5 hover:text-white"
+              className="rounded-lg px-4 py-3 text-base font-medium text-[#A1A1AA] transition-colors duration-200 hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>
