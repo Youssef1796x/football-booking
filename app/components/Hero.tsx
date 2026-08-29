@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Venue name — monumental */}
         <h1
-          className="text-2xl font-black leading-[2] text-white sm:text-2xl md:text-2xl lg:text-[8rem]"
+          className="text-2xl font-black leading-[2] text-white sm:text-2xl md:text-2xl lg:text-[2rem]"
           style={{ letterSpacing: "-0.02em" }}
         >
           احجز ماتش النهارده ⚽
