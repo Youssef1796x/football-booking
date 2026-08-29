@@ -1,9 +1,17 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Base44 Dev Environment
 
-# This is NOT the Next.js you know
+## Stack
+- Next.js 16.3.3 (Turbopack) + React 19 + Tailwind CSS v4, TypeScript.
+- Frontend-only app (create-next-app default). No backend, database, or external services.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## Running
+```
+docker compose -f docker-compose.base44.yml up -d
+```
+- Node 22 base image, source bind-mounted at `/app`, deps installed on boot via `npm install`.
+- Dev server: `next dev -H 0.0.0.0 -p 3000` (live reload via polling for bind mounts).
+- Web entry point on host port 3000.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+## Notes
+- `next.config.ts` sets `allowedDevOrigins` from `BASE44_PUBLIC_HOST_SUFFIX` so the preview origin can load dev assets/HMR.
+- No secrets required to boot.
