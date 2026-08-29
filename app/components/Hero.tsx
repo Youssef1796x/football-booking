@@ -1,0 +1,91 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+
+export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#0A0A0A]">
+      {/* Background image with parallax */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ transform: `translateY(${scrollY * 0.35}px) scale(1.05)` }}
+      >
+        <Image
+          src="/hero-pitch.jpg"
+          alt="ملعب النور - أرضية طبيعية بإضاءة احترافية"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Dark gradient overlay — darker on the right (RTL text side) */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/75 to-[#0A0A0A]/30" />
+
+      {/* Vignette to focus the eye on text */}
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_right_center,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.8)_100%)]" />
+
+      {/* Content */}
+      <div className="relative z-20 flex min-h-screen flex-col justify-center px-6 py-20 sm:px-10 md:px-16 lg:px-24">
+        {/* Pitch-line divider — green accent */}
+        <div className="mb-8 h-[3px] w-14 bg-[#2ECC71] sm:w-20" />
+
+        {/* Location with thin rule */}
+        <div className="mb-5 flex items-center gap-3">
+          <span className="text-base font-medium text-[#8E8E93] sm:text-lg">
+            مدينة نصر
+          </span>
+          <div className="h-px w-10 bg-[#8E8E93]/40" />
+        </div>
+
+        {/* Venue name — monumental */}
+        <h1
+          className="text-5xl font-black leading-[1.1] text-white sm:text-7xl md:text-8xl lg:text-[8rem]"
+          style={{ letterSpacing: "-0.02em" }}
+        >
+          ملعب النور
+        </h1>
+
+        {/* Description */}
+        <p
+          className="mt-7 max-w-md text-lg text-[#8E8E93] sm:text-xl"
+          style={{ lineHeight: "1.6" }}
+        >
+          ملعبك المفضل في قلب مدينة نصر. نجيل طبيعي وإضاءة احترافية عشان تلعب
+          كورتك بمزاج.
+        </p>
+
+        {/* CTA — stadium light glow on hover */}
+        <a
+          href="#"
+          className="group mt-10 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
+        >
+          شوف المواعيد
+          <svg
+            className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 12H5m0 0l7 7m-7-7l7-7"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+  );
+}
