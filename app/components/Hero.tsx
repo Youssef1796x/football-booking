@@ -68,7 +68,7 @@ export default function Hero() {
 
         {/* CTA — stadium light glow on hover */}
         <a
-          href="#"
+          href="#booking"
           className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
         >
           شوف المواعيد

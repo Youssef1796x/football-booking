@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "الرئيسية", href: "#home" },
@@ -12,27 +12,44 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-gradient-to-b from-[#0A0A0A]/90 to-transparent backdrop-blur-[2px]">
+    <nav
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/5 bg-[#0A0A0A]/80 backdrop-blur-lg"
+          : "border-b border-transparent bg-gradient-to-b from-[#0A0A0A]/70 to-transparent"
+      }`}
+    >
       <div className="flex items-center justify-between px-6 py-4 sm:px-10 md:px-16 lg:px-24">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#2ECC71]" />
-          <span className="text-xl font-black text-white sm:text-2xl">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2ECC71]/10 ring-1 ring-[#2ECC71]/30">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#2ECC71]" />
+          </span>
+          <span className="text-xl font-black tracking-tight text-white sm:text-2xl">
             ملعب النور
           </span>
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-[#A1A1AA] transition-colors duration-200 hover:text-white"
+              className="group relative text-sm font-medium text-[#A1A1AA] transition-colors duration-200 hover:text-white"
             >
               {link.label}
+              <span className="absolute -bottom-1 right-0 h-px w-0 bg-[#2ECC71] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
@@ -71,11 +88,11 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden bg-[#0A0A0A]/95 backdrop-blur-md transition-all duration-300 md:hidden ${
+        className={`overflow-hidden transition-all duration-300 md:hidden ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col gap-1 px-6 pb-6 pt-2">
+        <div className="flex flex-col gap-1 border-t border-white/5 bg-[#0A0A0A]/95 px-6 pb-6 pt-3 backdrop-blur-md">
           {links.map((link) => (
             <a
               key={link.label}
