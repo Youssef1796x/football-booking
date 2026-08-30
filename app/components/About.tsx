@@ -34,7 +34,7 @@ export default function About() {
     <section
       ref={aboutRef}
       id="about"
-      className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-14 sm:py-20"
+      className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-16 sm:py-24"
     >
       {/* Subtle green accent glows */}
       <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#2ECC71]/10 blur-3xl" />
@@ -42,63 +42,62 @@ export default function About() {
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
         {/* Header label */}
-        <div className="mb-10 flex items-center gap-3">
+        <div className="mb-6 flex items-center gap-3">
           <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
             ملعب النور
           </span>
           <div className="h-px w-10 bg-[#8E8E93]/40" />
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2 md:items-center lg:gap-16">
-          {/* About text */}
-          <div
-            className={`transition-all duration-700 ease-out ${
-              visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-            }`}
-          >
-            <h2 className="text-2xl font-black text-white sm:text-3xl">
-              عن الملعب
-            </h2>
+        {/* Heading */}
+        <h2 className="text-2xl font-black text-white sm:text-3xl">
+          عن الملعب
+        </h2>
 
-            <div
-              className="mt-7 max-w-md text-lg text-[#A1A1AA] sm:text-xl"
-              style={{ lineHeight: "1.8" }}
-            >
-              <p>
-                ملعب النور عبارة عن عشب طبيعي وموجود في زهراء مدينة نصر، بيفتح من 3 العصر لحد آخر الليل
-              </p>
-              <p className="mt-4">
-                وفيه إنارة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار، تقدروا
-                تحجزوا الموعد اللي يناسبكم من الصفحة دي
-              </p>
-              <p className="mt-4 text-green-700 font-bold">
-                جاهز تحجز وتطلع ميسي اللي جواك؟
-              </p>
-            </div>
+        {/* Pitch image — prominent main visual, clearly separated */}
+        <div
+          className={`mt-8 transition-all duration-700 ease-out ${
+            visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+        >
+          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[#2ECC71]/25 shadow-[0_0_40px_rgba(46,204,113,0.12)] ring-1 ring-[#2ECC71]/15">
+            <Image
+              src="/hero-pitch.jpg"
+              alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent" />
           </div>
+        </div>
 
-          {/* Pitch image card */}
+        {/* About details */}
+        <div
+          className={`mt-10 transition-all duration-700 ease-out ${
+            visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+          style={{ transitionDelay: `${visible ? 120 : 0}ms` }}
+        >
           <div
-            className={`transition-all duration-700 ease-out ${
-              visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-            }`}
-            style={{ transitionDelay: `${visible ? 150 : 0}ms` }}
+            className="max-w-2xl text-lg text-[#A1A1AA] sm:text-xl"
+            style={{ lineHeight: "1.8" }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#2ECC71]/20 ring-1 ring-[#2ECC71]/10">
-              <Image
-                src="/hero-pitch.jpg"
-                alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent" />
-            </div>
+            <p>
+              ملعب النور عبارة عن عشب طبيعي وموجود في زهراء مدينة نصر، بيفتح من 3 العصر لحد آخر الليل
+            </p>
+            <p className="mt-4">
+              وفيه إنارة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار، تقدروا
+              تحجزوا الموعد اللي يناسبكم من الصفحة دي
+            </p>
+            <p className="mt-4 text-green-700 font-bold">
+              جاهز تحجز وتطلع ميسي اللي جواك؟
+            </p>
           </div>
         </div>
 
         {/* Facilities */}
-        <div className="mt-12">
+        <div className="mt-14">
           <div className="mb-6 flex items-center gap-3">
             <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
               مميزات تانية
@@ -116,7 +115,7 @@ export default function About() {
                     : "translate-y-6 opacity-0"
                 }`}
                 style={{
-                  transitionDelay: `${visible ? 200 + i * 120 : 0}ms`,
+                  transitionDelay: `${visible ? 240 + i * 120 : 0}ms`,
                 }}
               >
                 <div
