@@ -40,7 +40,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 flex h-full flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 md:px-16 lg:px-24 lg:py-16">
-        
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
           <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
@@ -66,7 +65,7 @@ export default function Hero() {
         </p>
 
         {/* CTA — stadium light glow on hover */}
-        
+        <a
           href="#booking"
           className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
         >
