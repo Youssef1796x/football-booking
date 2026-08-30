@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Droplet, CircleParking, Coffee } from "lucide-react";
+
+import { Droplet, Armchair, Coffee } from "lucide-react";
 
 const facilities = [
   { label: "حمامات", Icon: Droplet },
-  { label: "باركينج", Icon: CircleParking },
+  { label: "مقاعد", Icon: Armchair },
   { label: "كافيتيريا", Icon: Coffee },
 ];
 
