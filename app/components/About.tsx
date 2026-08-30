@@ -62,7 +62,7 @@ export default function About() {
         >
           <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[#2ECC71]/25 shadow-[0_0_40px_rgba(46,204,113,0.12)] ring-1 ring-[#2ECC71]/15">
             <Image
-              src="/hero-pitch.jpg"
+              src="/about-pitch.jpg"
               alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
               fill
               sizes="(max-width: 1024px) 100vw, 1024px"
@@ -87,8 +87,8 @@ export default function About() {
               ملعب النور عبارة عن عشب طبيعي وموجود في زهراء مدينة نصر، بيفتح من 3 العصر لحد آخر الليل
             </p>
             <p className="mt-4">
-              وفيه إنارة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار، تقدروا
-              تحجزوا الموعد اللي يناسبكم من الصفحة دي
+              وفيه إضاءة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار، تقدروا
+              تحجزوا الموعد اللي يناسبكم من الموقع ده
             </p>
             <p className="mt-4 text-green-700 font-bold">
               جاهز تحجز وتطلع ميسي اللي جواك؟

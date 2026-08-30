@@ -54,7 +54,7 @@ export default function Hero() {
           className="text-2xl font-black leading-tight text-white sm:text-2xl md:text-2xl lg:text-[2rem]"
           style={{ letterSpacing: "-0.02em" }}
         >
-          احجز ماتش النهارده ⚽
+          لحجز ماتشات الكوره ⚽
         </h1>
 
         {/* Description */}
