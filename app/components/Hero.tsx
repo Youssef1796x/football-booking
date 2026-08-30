@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[62vh] min-h-[480px] w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A] md:h-[68vh] md:min-h-[540px] lg:h-[75vh] lg:min-h-[600px]"
+      className="relative h-[65vh] min-h-[500px] w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A] md:h-[68vh] md:min-h-[540px] lg:h-[75vh] lg:min-h-[600px]"
     >
       {/* Background image with parallax */}
       <div
@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_right_center,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.8)_100%)]" />
 
       {/* Content */}
-      <div className="relative z-20 flex h-full flex-col justify-start px-6 py-32 sm:px-10 md:px-16 lg:px-24">
+      <div className="relative z-20 flex h-full flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 md:px-16 lg:px-24 lg:py-16">
         
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Venue name — monumental */}
         <h1
-          className="text-2xl font-black leading-[2] text-white sm:text-2xl md:text-2xl lg:text-[2rem]"
+          className="text-2xl font-black leading-tight text-white sm:text-2xl md:text-2xl lg:text-[2rem]"
           style={{ letterSpacing: "-0.02em" }}
         >
           احجز ماتش النهارده ⚽
@@ -63,11 +63,10 @@ export default function Hero() {
           style={{ lineHeight: "1.8" }}
         >
           جاهز للماتش ؟ شوف المواعيد المتاحة واختار الوقت اللي يناسبك.
-
         </p>
 
         {/* CTA — stadium light glow on hover */}
-        <a
+        
           href="#booking"
           className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
         >
