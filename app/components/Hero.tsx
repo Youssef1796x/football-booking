@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[75vh] min-h-[600px] w-full overflow-hidden bg-[#0A0A0A]"
+      className="relative h-[75vh] min-h-[600px] w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A]"
     >
       {/* Background image with parallax */}
       <div
