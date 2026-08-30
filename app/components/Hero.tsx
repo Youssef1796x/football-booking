@@ -40,6 +40,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 flex h-full flex-col justify-center px-6 py-10 sm:px-10 sm:py-14 md:px-16 lg:px-24 lg:py-16">
+        
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
           <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
@@ -62,6 +63,7 @@ export default function Hero() {
           style={{ lineHeight: "1.8" }}
         >
           جاهز للماتش ؟ شوف المواعيد المتاحة واختار الوقت اللي يناسبك.
+
         </p>
 
         {/* CTA — stadium light glow on hover */}
