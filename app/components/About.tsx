@@ -36,36 +36,26 @@ export default function About() {
       id="about"
       className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-14 sm:py-20"
     >
-      {/* Muted pitch background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-pitch.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/95 to-[#0A0A0A]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(10,10,10,0.6)_75%,rgba(10,10,10,0.9)_100%)]" />
-      </div>
+      {/* Subtle green accent glows */}
+      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#2ECC71]/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#2ECC71]/5 blur-3xl" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
+        {/* Header label */}
+        <div className="mb-10 flex items-center gap-3">
+          <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+            ملعب النور
+          </span>
+          <div className="h-px w-10 bg-[#8E8E93]/40" />
+        </div>
+
         <div className="grid gap-10 md:grid-cols-2 md:items-center lg:gap-16">
-          {/* Intro text */}
+          {/* About text */}
           <div
             className={`transition-all duration-700 ease-out ${
-              visible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-6 opacity-0"
+              visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
             }`}
           >
-            <div className="mb-7 flex items-center gap-3">
-              <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
-                ملعب النور
-              </span>
-              <div className="h-px w-10 bg-[#8E8E93]/40" />
-            </div>
-
             <h2 className="text-2xl font-black text-white sm:text-3xl">
               عن الملعب
             </h2>
@@ -87,15 +77,36 @@ export default function About() {
             </div>
           </div>
 
-          {/* Facility cards */}
-          <div className="flex flex-col gap-4">
-            <div className="mb-2 flex items-center gap-3">
-              <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
-                مميزات تانية
-              </span>
-              <div className="h-px w-10 bg-[#8E8E93]/40" />
+          {/* Pitch image card */}
+          <div
+            className={`transition-all duration-700 ease-out ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+            style={{ transitionDelay: `${visible ? 150 : 0}ms` }}
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#2ECC71]/20 ring-1 ring-[#2ECC71]/10">
+              <Image
+                src="/hero-pitch.jpg"
+                alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent" />
             </div>
+          </div>
+        </div>
 
+        {/* Facilities */}
+        <div className="mt-12">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+              مميزات تانية
+            </span>
+            <div className="h-px w-10 bg-[#8E8E93]/40" />
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
             {facilities.map((f, i) => (
               <div
                 key={f.label}
@@ -105,7 +116,7 @@ export default function About() {
                     : "translate-y-6 opacity-0"
                 }`}
                 style={{
-                  transitionDelay: `${visible ? 150 + i * 120 : 0}ms`,
+                  transitionDelay: `${visible ? 200 + i * 120 : 0}ms`,
                 }}
               >
                 <div
