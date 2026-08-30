@@ -2,29 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { Droplet, CircleParking, Coffee } from "lucide-react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
 const facilities = [
-  {
-    label: "دورات مياه",
-    icon: <path d="M12 2.5S5 9 5 13.5a7 7 0 0 0 14 0C19 9 12 2.5 12 2.5Z" />,
-  },
-  {
-    label: "باركينج",
-    icon: (
-      <>
-        <rect x="3" y="3" width="18" height="18" rx="3" />
-        <path d="M9 17V7h3.5a2.5 2.5 0 0 1 0 5H9" />
-      </>
-    ),
-  },
-  {
-    label: "إضاءة ليلية",
-    icon: (
-      <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8a6 6 0 0 0-12 0c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5M9 18h6M10 22h4" />
-    ),
-  },
+  { label: "حمامات", Icon: Droplet },
+  { label: "باركينج", Icon: CircleParking },
+  { label: "كافيتيريا", Icon: Coffee },
 ];
 
 export default function Home() {
@@ -56,7 +41,7 @@ export default function Home() {
       <section
         ref={aboutRef}
         id="about"
-        className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-20 sm:py-24"
+        className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-14 sm:py-20"
       >
         {/* Muted pitch background */}
         <div className="absolute inset-0 z-0">
@@ -81,9 +66,9 @@ export default function Home() {
                   : "translate-y-6 opacity-0"
               }`}
             >
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-7 flex items-center gap-3">
                 <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
-                  مدينة نصر
+                  ملعب النور
                 </span>
                 <div className="h-px w-10 bg-[#8E8E93]/40" />
               </div>
@@ -92,17 +77,32 @@ export default function Home() {
                 عن الملعب
               </h2>
 
-              <p
-                className="mt-7 max-w-md text-lg text-[#A1A1AA] sm:text-xl"
-                style={{ lineHeight: "1.8" }}
-              >
-                ملعب النور ملعب كرة قدم بأرضية طبيعية في قلب مدينة نصر. بيفتعلكم
-                كل مساء بإضاءة احترافية عشان تلعبوا في أي وقت وبأعلى مستوى.
-              </p>
+              <div
+  className="mt-7 max-w-md text-lg text-[#A1A1AA] sm:text-xl"
+  style={{ lineHeight: "1.8" }}
+>
+  <p>
+    ملعب النور عباره عن عشب طبيعي وموجود في زهراء مدينه نصر ، بيفتح من 3 العصر لحد آخر الليل
+  </p>
+  <p className="mt-4">
+    وفيه إنارة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار ، تقدروا
+    تحجزوا الميعاد اللي يناسبكم من الصفحه دي
+  </p>
+  <p className="mt-4 text-green-700 font-bold">
+    جاهز تحجز وتطلع ميسي اللي جواك ؟
+  </p>
+</div>
             </div>
 
             {/* Facility cards */}
             <div className="flex flex-col gap-4">
+              <div className="mb-2 flex items-center gap-3">
+                <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+                  مميزات تانيه
+                </span>
+                <div className="h-px w-10 bg-[#8E8E93]/40" />
+              </div>
+
               {facilities.map((f, i) => (
                 <div
                   key={f.label}
@@ -121,17 +121,10 @@ export default function Home() {
                     className="group rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2ECC71]/40 hover:bg-[#2ECC71]/[0.04] focus-visible:border-[#2ECC71]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ECC71]/40"
                   >
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 ring-1 ring-[#2ECC71]/30 transition-all duration-300 group-hover:ring-[#2ECC71]/50">
-                      <svg
+                      <f.Icon
                         className="h-6 w-6 text-[#2ECC71]"
-                        fill="none"
-                        stroke="currentColor"
                         strokeWidth={1.8}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        viewBox="0 0 24 24"
-                      >
-                        {f.icon}
-                      </svg>
+                      />
                     </span>
                     <span className="mt-4 block text-base font-medium text-white">
                       {f.label}
