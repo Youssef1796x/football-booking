@@ -35,10 +35,10 @@ export default function About() {
     <section
       ref={aboutRef}
       id="about"
-      className="relative scroll-mt-24 overflow-hidden bg-background py-16 sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden bg-transparent py-16 sm:py-24"
     >
       {/* Subtle green accent glows */}
-      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand)]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--glow)] blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[var(--brand)]/5 blur-3xl" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
@@ -51,7 +51,7 @@ export default function About() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl font-black text-white sm:text-3xl">
+        <h2 className="text-2xl font-black text-foreground sm:text-3xl">
           عن الملعب
         </h2>
 
@@ -61,7 +61,7 @@ export default function About() {
             visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[var(--brand)]/25 shadow-[0_0_40px_rgba(46,204,113,0.12)] ring-1 ring-[var(--brand)]/15">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[var(--brand)]/25 shadow-[0_0_34px_var(--glow)] ring-1 ring-[var(--brand)]/15">
             <Image
               src="/about-pitch.jpg"
               alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
@@ -122,7 +122,7 @@ export default function About() {
                 <div
                   tabIndex={0}
                   aria-label={f.label}
-                  className="group rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/40 hover:bg-[var(--brand)]/[0.04] focus-visible:border-[var(--brand)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/40"
+                  className="group rounded-2xl border border-border bg-surface/55 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/40 hover:bg-[var(--brand)]/[0.04] focus-visible:border-[var(--brand)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/40"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand)]/10 ring-1 ring-[var(--brand)]/30 transition-all duration-300 group-hover:ring-[var(--brand)]/50">
                     <f.Icon
@@ -130,7 +130,7 @@ export default function About() {
                       strokeWidth={1.8}
                     />
                   </span>
-                  <span className="mt-4 block text-base font-medium text-white">
+                  <span className="mt-4 block text-base font-medium text-foreground">
                     {f.label}
                   </span>
                 </div>

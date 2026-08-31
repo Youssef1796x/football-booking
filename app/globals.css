@@ -15,10 +15,12 @@
 :root {
   --background: #f5f8f6;
   --foreground: #17201b;
-  --surface: #ffffff;
-  --surface-raised: #edf3ef;
-  --border: rgba(23, 32, 27, 0.1);
-  --muted: #64716a;
+  --surface: #eef3f0;
+  --surface-raised: #e6eee9;
+  --border: rgba(23, 32, 27, 0.11);
+  --muted: #5f6d65;
+  --grid-line: rgba(23, 32, 27, 0.045);
+  --glow: rgba(37, 185, 104, 0.11);
   --brand: #25b968;
   --brand-foreground: #07140c;
   --image-foreground: #f4faf6;
@@ -31,6 +33,8 @@
   --surface-raised: #152019;
   --border: rgba(224, 244, 230, 0.1);
   --muted: #9aa9a0;
+  --grid-line: rgba(224, 244, 230, 0.045);
+  --glow: rgba(53, 212, 125, 0.1);
   --brand: #35d47d;
   --brand-foreground: #06110a;
 }
@@ -42,7 +46,7 @@ html {
 
 body {
   background-color: var(--background);
-  background-image: linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--brand) 2%, transparent) 100%), linear-gradient(to right, color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px);
+  background-image: linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--brand) 2%, transparent) 100%), linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 100% 100%, 32px 32px, 32px 32px;
   color: var(--foreground);
   font-family: var(--font-arabic), Arial, Helvetica, sans-serif;

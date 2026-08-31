@@ -84,8 +84,17 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#08110c]/45 text-[var(--image-foreground)]"
+            aria-label={isDark ? "تفعيل الوضع الفاتح" : "تفعيل الوضع الداكن"}
+          >
+            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
+          <button
           onClick={() => setOpen(!open)}
           className="flex h-10 w-10 items-center justify-center md:hidden"
           aria-label="القائمة"
@@ -107,7 +116,8 @@ export default function Navbar() {
               }`}
             />
           </div>
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -116,7 +126,7 @@ export default function Navbar() {
           open ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col gap-1 border-t border-white/5 bg-[#0A0A0A]/95 px-6 pb-6 pt-3 backdrop-blur-md">
+        <div className="flex flex-col gap-1 border-t border-border bg-background/95 px-6 pb-6 pt-3 backdrop-blur-md">
           {links.map((link) => (
             <a
               key={link.label}
