@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[65vh] min-h-[500px] w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A] md:h-[68vh] md:min-h-[540px] lg:h-[75vh] lg:min-h-[600px]"
+      className="relative h-[65vh] min-h-[500px] w-full scroll-mt-24 overflow-hidden bg-background md:h-[68vh] md:min-h-[540px] lg:h-[75vh] lg:min-h-[600px]"
     >
       {/* Background image with parallax */}
       <div
@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
 
       {/* Dark gradient overlay — darker on the right (RTL text side) */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/75 to-[#0A0A0A]/30" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#08110c] via-[#08110c]/75 to-[#08110c]/30" />
 
       {/* Vignette to focus the eye on text */}
       <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_right_center,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.8)_100%)]" />
@@ -43,7 +43,7 @@ export default function Hero() {
         
         {/* Location with thin rule */}
         <div className="mb-5 flex items-center gap-3">
-          <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+          <span className="text-base font-medium text-muted sm:text-lg">
             مدينة نصر
           </span>
           <div className="h-px w-10 bg-[#8E8E93]/40" />
@@ -59,7 +59,7 @@ export default function Hero() {
 
         {/* Description */}
         <p
-          className="mt-7 max-w-md text-lg text-[#A1A1AA] sm:text-xl"
+          className="mt-7 max-w-md text-lg text-muted sm:text-xl"
           style={{ lineHeight: "1.8" }}
         >
           جاهز للماتش ؟ شوف المواعيد المتاحة واختار الوقت اللي يناسبك.
@@ -69,7 +69,7 @@ export default function Hero() {
         {/* CTA — stadium light glow on hover */}
         <a
           href="#booking"
-          className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-[#2ECC71] px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
+          className="group mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-brand px-8 py-4 text-lg font-bold text-[#0A0A0A] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(46,204,113,0.45)] sm:text-xl"
         >
           شوف المواعيد
           <svg

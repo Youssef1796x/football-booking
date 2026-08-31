@@ -35,16 +35,16 @@ export default function About() {
     <section
       ref={aboutRef}
       id="about"
-      className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-16 sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden bg-background py-16 sm:py-24"
     >
       {/* Subtle green accent glows */}
-      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#2ECC71]/10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#2ECC71]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[var(--brand)]/10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[var(--brand)]/5 blur-3xl" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
         {/* Header label */}
         <div className="mb-6 flex items-center gap-3">
-          <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+          <span className="text-base font-medium text-muted sm:text-lg">
             ملعب النور
           </span>
           <div className="h-px w-10 bg-[#8E8E93]/40" />
@@ -61,7 +61,7 @@ export default function About() {
             visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[#2ECC71]/25 shadow-[0_0_40px_rgba(46,204,113,0.12)] ring-1 ring-[#2ECC71]/15">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-[var(--brand)]/25 shadow-[0_0_40px_rgba(46,204,113,0.12)] ring-1 ring-[var(--brand)]/15">
             <Image
               src="/about-pitch.jpg"
               alt="ملعب النور - عشب طبيعي بإضاءة احترافية"
@@ -81,7 +81,7 @@ export default function About() {
           style={{ transitionDelay: `${visible ? 120 : 0}ms` }}
         >
           <div
-            className="max-w-2xl text-lg text-[#A1A1AA] sm:text-xl"
+            className="max-w-2xl text-lg text-muted sm:text-xl"
             style={{ lineHeight: "1.8" }}
           >
             <p>
@@ -100,7 +100,7 @@ export default function About() {
         {/* Facilities */}
         <div className="mt-14">
           <div className="mb-6 flex items-center gap-3">
-            <span className="text-base font-medium text-[#A1A1AA] sm:text-lg">
+            <span className="text-base font-medium text-muted sm:text-lg">
               مميزات تانية
             </span>
             <div className="h-px w-10 bg-[#8E8E93]/40" />
@@ -122,11 +122,11 @@ export default function About() {
                 <div
                   tabIndex={0}
                   aria-label={f.label}
-                  className="group rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2ECC71]/40 hover:bg-[#2ECC71]/[0.04] focus-visible:border-[#2ECC71]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ECC71]/40"
+                  className="group rounded-2xl border border-white/5 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand)]/40 hover:bg-[var(--brand)]/[0.04] focus-visible:border-[var(--brand)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/40"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 ring-1 ring-[#2ECC71]/30 transition-all duration-300 group-hover:ring-[#2ECC71]/50">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand)]/10 ring-1 ring-[var(--brand)]/30 transition-all duration-300 group-hover:ring-[var(--brand)]/50">
                     <f.Icon
-                      className="h-6 w-6 text-[#2ECC71]"
+                      className="h-6 w-6 text-[var(--brand)]"
                       strokeWidth={1.8}
                     />
                   </span>

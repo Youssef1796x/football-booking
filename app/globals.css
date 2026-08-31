@@ -2,16 +2,66 @@
 
 @theme inline {
   --font-arabic: var(--font-arabic);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+}
+
+:root {
+  --background: #f5f8f6;
+  --foreground: #17201b;
+  --surface: #ffffff;
+  --surface-raised: #edf3ef;
+  --border: rgba(23, 32, 27, 0.1);
+  --muted: #64716a;
+  --brand: #25b968;
+  --brand-foreground: #07140c;
+  --image-foreground: #f4faf6;
+}
+
+.dark {
+  --background: #080c0a;
+  --foreground: #f4faf6;
+  --surface: #101713;
+  --surface-raised: #152019;
+  --border: rgba(224, 244, 230, 0.1);
+  --muted: #9aa9a0;
+  --brand: #35d47d;
+  --brand-foreground: #06110a;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
-  background: #0a0a0a;
-  color: #ffffff;
+  background-color: var(--background);
+  background-image: linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--brand) 2%, transparent) 100%), linear-gradient(to right, color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+  color: var(--foreground);
   font-family: var(--font-arabic), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  z-index: 60;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 35%, transparent);
+  color: var(--foreground);
 }
