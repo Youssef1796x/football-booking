@@ -14,10 +14,16 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return true;
-    return window.localStorage.getItem("theme") !== "light";
-  });
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      const dark = window.localStorage.getItem("theme") !== "light";
+      setIsDark(dark);
+      document.documentElement.classList.toggle("dark", dark);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -89,33 +95,23 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#08110c]/45 text-[var(--image-foreground)]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface/70 text-muted"
             aria-label={isDark ? "تفعيل الوضع الفاتح" : "تفعيل الوضع الداكن"}
           >
             {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <button
-          onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center md:hidden"
-          aria-label="القائمة"
-        >
-          <div className="flex flex-col gap-1.5">
-            <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-                open ? "translate-y-2 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
-                open ? "-translate-y-2 -rotate-45" : ""
-              }`}
-            />
-          </div>
+            type="button"
+            onClick={() => setOpen(!open)}
+            className="flex h-10 w-10 items-center justify-center"
+            aria-label="القائمة"
+            aria-expanded={open}
+          >
+            <div className="flex flex-col gap-1.5">
+              <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${open ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+            </div>
           </button>
         </div>
       </div>
