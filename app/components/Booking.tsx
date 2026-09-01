@@ -2,9 +2,10 @@ export default function Booking() {
   return (
     <section
       id="booking"
-      className="scroll-mt-24 border-t border-white/5 px-6 py-20 sm:px-10 md:px-16 lg:px-24"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 px-6 py-20 sm:px-10 md:px-16 lg:px-24"
     >
-      <h2 className="text-2xl font-black text-white">الحجز</h2>
+      <div className="pointer-events-none absolute top-0 left-1/3 h-72 w-72 rounded-full bg-[#2ECC71]/[0.03] blur-[120px]" />
+      <h2 className="relative z-10 text-2xl font-black text-white">الحجز</h2>
     </section>
   );
 }
