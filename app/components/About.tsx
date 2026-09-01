@@ -6,8 +6,8 @@ import Image from "next/image";
 import { Droplet, Armchair, Coffee } from "lucide-react";
 
 const facilities = [
-  { label: "حمامات", Icon: Droplet },
   { label: "مقاعد", Icon: Armchair },
+  { label: "حمامات", Icon: Droplet },
   { label: "كافيتيريا", Icon: Coffee },
 ];
 
