@@ -10,8 +10,6 @@ import ReviewStep from "./steps/ReviewStep";
 import {
   DURATIONS,
   PITCHES,
-  dateKey,
-  getAvailableSlots,
   type PitchId,
 } from "./data";
 
@@ -28,13 +26,17 @@ export default function BookingFlow() {
   const [pitchId, setPitchId] = useState<PitchId | null>(null);
   const [dateStr, setDateStr] = useState<string | null>(null);
   const [durationId, setDurationId] = useState<string | null>(null);
+  const [customHours, setCustomHours] = useState(2);
   const [timeStart, setTimeStart] = useState<string | null>(null);
 
   const date = useMemo(
     () => (dateStr ? new Date(dateStr + "T00:00:00") : null),
     [dateStr]
   );
-  const duration = DURATIONS.find((d) => d.id === durationId) ?? null;
+  const duration =
+    durationId === "custom"
+      ? { id: "custom", label: `${customHours} ساعة`, hours: customHours }
+      : DURATIONS.find((d) => d.id === durationId) ?? null;
 
   function selectPitch(id: PitchId) {
     setPitchId(id);
@@ -83,7 +85,9 @@ export default function BookingFlow() {
             <DurationStep
               selected={durationId}
               pitchId={pitchId}
+              customHours={customHours}
               onSelect={selectDuration}
+              onCustomHours={setCustomHours}
             />
           )}
           {step === 3 && pitchId && dateStr && duration && (
@@ -95,11 +99,12 @@ export default function BookingFlow() {
               onSelect={setTimeStart}
             />
           )}
-          {step === 4 && pitchId && date && durationId && timeStart && (
+          {step === 4 && pitchId && date && duration && timeStart && (
             <ReviewStep
               pitchId={pitchId}
               date={date}
-              durationId={durationId}
+              durationLabel={duration.label}
+              durationHours={duration.hours}
               timeStart={timeStart}
             />
           )}

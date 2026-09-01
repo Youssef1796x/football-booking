@@ -1,29 +1,30 @@
 "use client";
 
-import { PITCHES, DURATIONS, priceFor, formatTime, formatFullDate } from "../data";
+import { PITCHES, priceFor, formatTime, formatFullDate } from "../data";
 import type { PitchId } from "../data";
 
 export default function ReviewStep({
   pitchId,
   date,
-  durationId,
+  durationLabel,
+  durationHours,
   timeStart,
 }: {
   pitchId: PitchId;
   date: Date;
-  durationId: string;
+  durationLabel: string;
+  durationHours: number;
   timeStart: string;
 }) {
   const pitch = PITCHES.find((p) => p.id === pitchId)!;
-  const duration = DURATIONS.find((d) => d.id === durationId)!;
-  const price = priceFor(pitch, duration.hours);
+  const price = priceFor(pitch, durationHours);
 
   const rows = [
     { label: "الملعب", value: pitch.name },
     { label: "التاريخ", value: formatFullDate(date) },
-    { label: "المدة", value: duration.label },
+    { label: "المدة", value: durationLabel },
     { label: "الميعاد", value: `${formatTime(timeStart)} - ${formatTime(
-      addDuration(timeStart, duration.hours)
+      addDuration(timeStart, durationHours)
     )}` },
   ];
 
