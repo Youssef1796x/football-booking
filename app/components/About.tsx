@@ -35,11 +35,11 @@ export default function About() {
     <section
       ref={aboutRef}
       id="about"
-      className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0A] py-16 sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden py-16 sm:py-24"
     >
-      {/* Subtle green accent glows */}
-      <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#2ECC71]/10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#2ECC71]/5 blur-3xl" />
+      {/* Subtle, softly spread green accent glows */}
+      <div className="pointer-events-none absolute top-0 right-1/4 h-[34rem] w-[34rem] rounded-full bg-[#2ECC71]/[0.05] blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 left-1/4 h-[30rem] w-[30rem] rounded-full bg-[#2ECC71]/[0.035] blur-[130px]" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
         {/* Header label */}
@@ -91,7 +91,7 @@ export default function About() {
               وفيه إضاءة قوية بالليل وده هيخليك تلعب وانت حاسس كأنك بالنهار، تقدروا
               تحجزوا الموعد اللي يناسبكم من الموقع ده
             </p>
-            <p className="mt-4 text-green-700 font-bold">
+            <p className="mt-4 text-[#2ECC71] font-bold">
               جاهز تحجز وتطلع ميسي اللي جواك؟
             </p>
           </div>

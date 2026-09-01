@@ -9,7 +9,11 @@ html {
 }
 
 body {
-  background: #0a0a0a;
+  background-color: #0a0a0a;
+  background-image:
+    linear-gradient(rgba(46, 204, 113, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 204, 113, 0.028) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: #ffffff;
   font-family: "Cairo Variable", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
