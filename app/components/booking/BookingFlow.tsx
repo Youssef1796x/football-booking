@@ -9,7 +9,6 @@ import TimeStep from "./steps/TimeStep";
 import ReviewStep from "./steps/ReviewStep";
 import {
   DURATIONS,
-  PITCHES,
   type PitchId,
 } from "./data";
 
@@ -76,7 +75,7 @@ export default function BookingFlow() {
       <div className="mt-8">
         <h3 className="text-xl font-black text-white">{STEP_TITLES[step]}</h3>
 
-        <div className="mt-5 min-h-[14rem]">
+        <div className="mt-5 min-h-56">
           {step === 0 && (
             <PitchStep selected={pitchId} onSelect={selectPitch} />
           )}

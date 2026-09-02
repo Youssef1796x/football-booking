@@ -35,10 +35,6 @@ export interface TimeSlot {
   available: boolean;
 }
 
-function toMinutes(hhmm: string): number {
-  const [h, m] = hhmm.split(":").map(Number);
-  return h * 60 + m;
-}
 
 function toHHMM(min: number): string {
   const h = Math.floor(min / 60);

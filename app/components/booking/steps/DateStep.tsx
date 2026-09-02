@@ -17,7 +17,7 @@ export default function DateStep({
 
   return (
     <div className="space-y-4">
-      <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 [scrollbar-width:thin]">
+      <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 scrollbar-thin">
         {DATES.map((d) => {
           const key = dateKey(d);
           const active = selected === key;
@@ -29,7 +29,7 @@ export default function DateStep({
                 onSelect(key);
                 setShowCalendar(false);
               }}
-              className={`flex min-w-[4.5rem] flex-shrink-0 flex-col items-center gap-1 rounded-2xl border px-3 py-4 transition-all duration-300 ${
+              className={`flex min-w-18 shrink-0 flex-col items-center gap-1 rounded-2xl border px-3 py-4 transition-all duration-300 ${
                 active && !showCalendar
                   ? "border-[#2ECC71] bg-[#2ECC71]/8 shadow-[0_0_24px_rgba(46,204,113,0.15)]"
                   : "border-white/5 bg-white/2 hover:border-[#2ECC71]/40 hover:bg-[#2ECC71]/4"

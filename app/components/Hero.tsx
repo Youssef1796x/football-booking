@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[65vh] min-h-[500px] w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A] md:h-[68vh] md:min-h-[540px] lg:h-[75vh] lg:min-h-[600px]"
+      className="relative h-[65vh] min-h-125 w-full scroll-mt-24 overflow-hidden bg-[#0A0A0A] md:h-[68vh] md:min-h-135 lg:h-[75vh] lg:min-h-150"
     >
       {/* Background image with parallax */}
       <div
@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
 
       {/* Dark gradient overlay — darker on the right (RTL text side) */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/75 to-[#0A0A0A]/30" />
+      <div className="absolute inset-0 z-10 bg-linear-to-l from-[#0A0A0A] via-[#0A0A0A]/75 to-[#0A0A0A]/30" />
 
       {/* Vignette to focus the eye on text */}
       <div className="absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_right_center,transparent_0%,rgba(10,10,10,0.5)_70%,rgba(10,10,10,0.8)_100%)]" />

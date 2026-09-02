@@ -38,8 +38,8 @@ export default function About() {
       className="relative scroll-mt-24 overflow-hidden py-16 sm:py-24"
     >
       {/* Subtle, softly spread green accent glows */}
-      <div className="pointer-events-none absolute top-0 right-1/4 h-[34rem] w-[34rem] rounded-full bg-[#2ECC71]/[0.05] blur-[130px]" />
-      <div className="pointer-events-none absolute bottom-0 left-1/4 h-[30rem] w-[30rem] rounded-full bg-[#2ECC71]/[0.035] blur-[130px]" />
+      <div className="pointer-events-none absolute top-0 right-1/4 h-136 w-136 rounded-full bg-[#2ECC71]/5 blur-[130px]" />
+      <div className="pointer-events-none absolute bottom-0 left-1/4 h-120 w-120 rounded-full bg-[#2ECC71]/[0.035] blur-[130px]" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-16 lg:px-24">
         {/* Header label */}

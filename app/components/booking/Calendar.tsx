@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { dateKey } from "./data";
 
-const WEEKDAYS = ["أحد", "إثن", "ثلا", "أرب", "خمي", "جمع", "سبت"];
+const WEEKDAYS = ["أحد", "إثنين", "ثلاث", "أربع", "خميس", "جمعة", "سبت"];
 
 export default function Calendar({
   selected,

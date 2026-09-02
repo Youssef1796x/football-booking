@@ -26,7 +26,7 @@ export default function Navbar() {
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
           ? "border-b border-white/5 bg-[#0A0A0A]/80 backdrop-blur-lg"
-          : "border-b border-transparent bg-gradient-to-b from-[#0A0A0A]/70 to-transparent"
+          : "border-b border-transparent bg-linear-to-b from-[#0A0A0A]/70 to-transparent"
       }`}
     >
       <div className="flex items-center justify-between px-6 py-4 sm:px-10 md:px-16 lg:px-24">
@@ -98,7 +98,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-4 py-3 text-base font-medium text-[#A1A1AA] transition-colors duration-200 hover:bg-white/5 hover:text-white"
+              className="rounded-xl px-4 py-3 text-base font-medium text-[#A1A1AA] transition-colors duration-200 hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>

@@ -1,6 +1,6 @@
 "use client";
 
-import { PITCHES, type PitchId, priceFor } from "../data";
+import { PITCHES, type PitchId } from "../data";
 
 export default function PitchStep({
   selected,
